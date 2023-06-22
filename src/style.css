@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Ailerons';
+    src: local("Ailerons");
+    font-display: swap;    
+}
+:root {
+    /* Tipografía */
+    --principal: 'Ailerons', sans-serif;
+    --secundary: 'Space Mono', monospace;
+    /* spaces */
+    --padding: 2.1875rem;
+}
+
+@media screen and (max-width: 53.125rem) {
+    :root{
+        --padding: .625rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+    transition: background-color .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body {
+    --color-black: #121212;
+    --color-white: #F5F5F5;
+    --color-grey: #8F8F8F;
+    --color-secundary: #F05454;
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--principal);
+    color: var(--color-black);
+    line-height: 1.4em;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dark-mode{
+    --color-black: #F5F5F5;
+    --color-white: #121212;
+}
+
+img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    -o-object-fit: cover;
+        object-fit: cover;
+    -o-object-position: center center;
+        object-position: center center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+p a {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+
+::-moz-selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    /* opcional */
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+}
+
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}

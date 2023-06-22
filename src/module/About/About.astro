@@ -1,0 +1,52 @@
+---
+import StatsModule from "./StatsModule.vue";
+---
+<section class="About" id="about">   
+    <div class="About-content About-spacing">
+        <div>
+            <h2 class="About-text About-title">Front-End Developer</h2>
+            <p class="About-text About-bio">I'm Pablo Benito, Computer Technician and Front-End developer from Buenos Aires, Argentina. I love developing user interfaces with Vue and TypeScript.</p>
+        </div>
+        <StatsModule client:only="vue"/>
+    </div>
+    <div class="About-content">
+        <img 
+        src="https://images.unsplash.com/photo-1581161462962-d0faecc52557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+        alt="pablo benito's picture"
+        class="About-image">
+    </div>
+</section>
+<style lang="scss">
+    .About{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
+        grid-auto-rows: auto;
+        gap: .9375rem;
+        background-color: var(--color-white);
+        padding: var(--padding);
+        &-title{
+            font-size: 4vw;
+            margin: 0 0 .3125rem 0;
+            @media screen and (max-width: 850px) {
+                font-size: 8vw;
+            }
+        }
+        &-bio{
+            font-family: var(--secundary);
+            color: var(--color-grey);
+            font-size: clamp(1em, 2vw, 2vw);
+        }
+        &-text{
+            line-height: 100%;
+        }
+        &-image{
+            max-height: 43.75rem;
+        }
+        &-spacing{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.25rem;
+        }
+    }
+</style>

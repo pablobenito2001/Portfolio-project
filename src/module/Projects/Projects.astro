@@ -1,0 +1,34 @@
+---
+import Title from '../../components/Title.astro'
+import ProjectsModule from './ProjectsModule.vue';
+---
+<section class="Projects" id="projects">
+    <Title>Projects</Title>
+	<ProjectsModule client:only="vue"/>
+</section>  
+<script>
+    const options = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.1
+	}
+	const target = document.querySelector('#projects') as HTMLElement;
+
+	function call(entries: any, observer: any){
+		entries.forEach((elem: any) => {
+			elem.isIntersecting 
+            ? document.body.classList.add('dark-mode')
+			: document.body.classList.remove('dark-mode');
+			console.log(elem.isIntersecting );
+		})
+	}
+
+	const observer = new IntersectionObserver(call, options);
+	observer.observe(target);
+</script>
+<style lang="scss">
+    .Projects{
+        background-color: var(--color-white);
+        padding: var(--padding);
+    }
+</style>

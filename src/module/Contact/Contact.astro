@@ -1,0 +1,23 @@
+---
+import Title from '../../components/Title.astro';
+---
+<section class="Contact" id="contact"> 
+    <Title>Contact</Title>
+    <a href="mailto:benitopab@gmail.com" class="Contact-email" id="email">benitopab@gmail.com</a>
+</section>
+<style lang="scss">
+    .Contact{
+        background-color: var(--color-white);
+        padding: var(--padding);
+        &-email{
+            margin: var(--padding) 0 0 0;
+            line-height: 100%;
+            font-size: 5vw;
+            margin: var(--padding) 0 0 0;
+            @media screen and (max-width: 400px) {
+                font-size: 8vw;
+                padding: 20px 0;
+            }
+        }
+    }
+</style>

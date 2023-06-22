@@ -1,0 +1,52 @@
+---
+
+---
+<header class="Header" id="home">
+    <div class="Header-content Header-titles">
+        <h1 class="Header-text Header-title"><span>P</span><span>A</span><span>B</span><span>L</span><span>O</span><span>B</span><span>E</span><span>N</span><span>I</span><span>T</span><span>O</span>
+        </h1>
+    </div>
+</header>
+<script>
+    const target = document.querySelector('.Header-title') as HTMLTitleElement;
+
+    target.childNodes.forEach((node: Node, index: number) => {
+        const element = node as HTMLElement;
+        element.animate([
+            { 
+                'transform': 'translateY(200px)',
+                'opacity': 0
+            },
+            { 
+                'transform': 'translateY(0)', 
+                'opacity': 1
+            },
+        ], {
+           duration: 70 * index,
+           iterations: 1,
+        }) 
+    })
+</script>
+<style lang="scss">
+    .Header{
+        background-color: var(--color-white);
+        padding: .9375rem var(--padding);
+        overflow: hidden;
+        &-text{
+            line-height: 100%;
+            color: var(--color-black);
+        }
+        &-title{
+            font-size: 16vw;
+            text-align: center;
+            display: flex;
+            @media screen and (max-width: 25rem) {
+                font-size: 15vw;
+            }
+        }
+        &-titles{
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>

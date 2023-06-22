@@ -1,0 +1,40 @@
+---
+
+---
+<footer class="Footer">
+    <div class="Footer-content">
+        <span class="Footer-text">Get in touch:</span>
+        <ul class="Footer-flex">
+            <li class="Footer-text"><a href="#" rel="noreferrer">Twitter</a></li>
+            <li class="Footer-text"><a href="#" rel="noreferrer">GitHub</a></li>
+            <li class="Footer-text"><a href="#" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+    </div>
+    <div class="Footer-content">
+        <span class="Footer-text">Made with ❤ by Pablo Benito</span>
+    </div>
+</footer>
+<style lang="scss">
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: .9375rem;
+        background-color: var(--color-white);
+        padding: 2.1875rem;
+        border-top: solid 1px var(--color-grey);
+        &-text{
+            font-family: var(--secundary);
+            color: var(--color-grey);
+            font-size: 1vw;
+            @media screen and (max-width: 850px) {
+                font-size: 4vw;
+            }
+        }
+        &-flex{
+            display: flex;
+            gap: 10%;
+        }
+    }
+</style>

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0,
+        "name": "motostore",
+        "source_image": "https://res.cloudinary.com/dxagsphno/image/upload/v1687388456/Portfolio--projects/motostore/smartmockups_lj6943ob_lfqmru.png",
+        "type": "ecommerce",
+        "tecnologies": [
+            "HTML",
+            "SCSS",
+            "VUE",
+            "TYPESCRIPT"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "pokefind_sp",
+        "source_image": "https://res.cloudinary.com/dxagsphno/image/upload/v1687388918/Portfolio--projects/pokefind/smartmockups_lj6bqqjx_nv2y7n.png",
+        "type": "web aplication",
+        "tecnologies": [
+            "HTML",
+            "SCSS",
+            "VUE",
+            "TYPESCRIPT"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "terrydesk",
+        "source_image": "https://res.cloudinary.com/dxagsphno/image/upload/v1687390007/Portfolio--projects/terr/smartmockups_lj6cea7h_qp2hz1.png",
+        "type": "web aplication",
+        "tecnologies": [
+            "HTML",
+            "SCSS",
+            "TYPESCRIPT",
+            "VUE",
+            "DAYJS"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "portfolio",
+        "source_image": "https://res.cloudinary.com/dxagsphno/image/upload/v1687390731/Portfolio--projects/personal_portfolio/smartmockups_lj6cu68d_lqtpkv.png",
+        "type": "landing page",
+        "tecnologies": [
+            "HTML",
+            "SCSS",
+            "ASTRO",
+            "VUE",
+            "TYPESCRIPT"
+        ]
+    }
+]
