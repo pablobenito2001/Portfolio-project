@@ -1,0 +1,21 @@
+---
+import Social from '../../components/About/Social.astro'
+    const social = [
+        {
+            url: "https://www.linkedin.com/in/pablobenitodev/",
+            name: "LinkedIn"
+        },
+        {
+            url: "https://github.com/pablobenito2001",
+            name: "GitHub"
+        },
+        {
+            url: "https://twitter.com/PlaggbySia",
+            name: "Twitter"
+        }
+    ]
+---
+<div>
+    { social.map((elem) => (
+    <Social name={elem.name} url={elem.url}/>)) }
+</div>

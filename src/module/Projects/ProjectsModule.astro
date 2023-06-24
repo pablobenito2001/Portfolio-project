@@ -1,0 +1,14 @@
+---
+import type { ProjectType } from '../../entities/Projects';
+import { projects } from '../../consts/Projects';
+import ProjectsCardLayout from '../../layouts/Projects/ProjectsCardLayout.astro';
+import CardProject from '../../components/Project/CardProject.astro';
+---
+<ProjectsCardLayout>
+    {projects.map((project: ProjectType) => (
+        <CardProject name={project.name} description={project.type} pic={project.source_image} media={project.media} tecnologies={project.tecnologies}/>
+    ))}
+</ProjectsCardLoyaut>
+<style lang='scss'>
+
+</style>

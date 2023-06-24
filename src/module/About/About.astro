@@ -1,5 +1,6 @@
 ---
-import StatsModule from "./StatsModule.vue";
+import SocialGroup from "./SocialGroup.astro";
+import saturn from '../../assets/images/saturn.webp';
 ---
 <section class="About" id="about">   
     <div class="About-content About-spacing">
@@ -7,12 +8,12 @@ import StatsModule from "./StatsModule.vue";
             <h2 class="About-text About-title">Front-End Developer</h2>
             <p class="About-text About-bio">I'm Pablo Benito, Computer Technician and Front-End developer from Buenos Aires, Argentina. I love developing user interfaces with Vue and TypeScript.</p>
         </div>
-        <StatsModule client:only="vue"/>
+        <SocialGroup />
     </div>
     <div class="About-content">
         <img 
-        src="https://images.unsplash.com/photo-1581161462962-d0faecc52557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-        alt="pablo benito's picture"
+        src={saturn} 
+        alt="saturn photo"
         class="About-image">
     </div>
 </section>
@@ -25,10 +26,11 @@ import StatsModule from "./StatsModule.vue";
         background-color: var(--color-white);
         padding: var(--padding);
         &-title{
-            font-size: 4vw;
+            font-size: 3vw;
             margin: 0 0 .3125rem 0;
+            text-transform: uppercase;
             @media screen and (max-width: 850px) {
-                font-size: 8vw;
+                font-size: 6vw;
             }
         }
         &-bio{

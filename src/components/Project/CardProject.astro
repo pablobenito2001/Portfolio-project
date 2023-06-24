@@ -1,0 +1,51 @@
+---
+interface Props{
+    name: string;
+    description: string;
+    pic: string;
+    media: { source: string, media: number }[];
+    tecnologies: string[];
+}
+
+const { name, description, pic, media, tecnologies } = Astro.props;
+---
+<div class="ProjectCard">
+    <picture>
+        {media.map((elem: { source: string, media: number }) => (<source srcset={elem.source} media={`screen and (min-width: ${elem.media}px)`}>))}
+        <img src={pic} alt={`${name}' mockup'`} class="ProjectCard-image">
+    </picture>
+    <div>
+        <h3 class="ProjectCard-text ProjectCard-name">{name}-{description}</h3>
+        <span class="ProjectCard-text ProjectCard-tecnologies"><span class="ProjectCard-star">✦</span> {tecnologies.join('|')}</span>
+    </div>
+</div>
+<style lang='scss'>
+    .ProjectCard{
+        cursor: pointer;
+        &:hover .ProjectCard-star{
+            transform: rotate(360deg);
+        }
+        &-image{
+            width: 100%;
+            border-radius: 6%;
+            margin: 0 0 var(--padding) 0;
+        }
+        &-name{
+            font-size: clamp(2em, 3vw ,3vw);
+            margin-bottom: 1vw;
+            letter-spacing: -10%;
+            text-transform: uppercase;
+        }
+        &-tecnologies{
+            font-size: clamp(.7em, 1.5vw,1.5vw);
+            font-family: var(--secundary);
+        }
+        &-text{
+            line-height: 100%;
+        }
+        &-star{
+            display: inline-block;
+            transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+</style>

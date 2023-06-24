@@ -1,0 +1,49 @@
+---
+    const { url, name } = Astro.props;
+---
+<a href={url} rel="noopener noreferrer" title={name} class="Social" target="_blank">
+    <div class="Social-content">
+        <svg class="Social-arrow" xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35"><path d="m202-160-42-42 498-498H364v-60h396v396h-60v-294L202-160Z"/></svg>
+    </div>
+    <div class="Social-content">
+        <span class="Social-text">{name}</span>
+    </div>
+</a>
+<style lang='scss' scoped>
+    .Social{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .625rem;
+        border-bottom: solid .0625rem var(--color-grey);
+        border-top: solid .0625rem var(--color-grey);
+        width: 100%;
+        padding: .3125rem;
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-black);
+            transition: top .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &:hover::before{
+            top: 0;
+        }
+        &-text{
+            font-family: var(--secundary);
+            font-size: 1em;
+            color: var(--color-grey);
+        }
+        &-arrow{
+            fill: var(--color-grey);
+        }
+        &-content{
+            z-index: 2;
+        }
+    }
+</style>

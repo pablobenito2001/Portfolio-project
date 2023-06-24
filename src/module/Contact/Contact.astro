@@ -1,22 +1,67 @@
 ---
 import Title from '../../components/Title.astro';
+import mail from '../../assets/images/benitopab@gmail.com.png';
 ---
 <section class="Contact" id="contact"> 
-    <Title>Contact</Title>
-    <a href="mailto:benitopab@gmail.com" class="Contact-email" id="email">benitopab@gmail.com</a>
-</section>
+    <div class="Contact-content">
+        <Title>C<span class="isRed">✦</span>ntact</Title>
+    </div>
+    <div class="Contact-mail">
+        <div class="Contact-animate">
+            <a href="mailto:benitopab@gmail.com" class="Contact-email Contact-text isArchor">benitopab@gmail.com✦</a>
+            <a href="mailto:benitopab@gmail.com" class="Contact-email Contact-text isArchor">benitopab@gmail.com✦</a>
+            <a href="mailto:benitopab@gmail.com" class="Contact-email Contact-text isArchor">benitopab@gmail.com✦</a>
+            <a href="mailto:benitopab@gmail.com" class="Contact-email Contact-text isArchor">benitopab@gmail.com✦</a>
+            <a href="mailto:benitopab@gmail.com" class="Contact-email Contact-text isArchor">benitopab@gmail.com✦</a>
+        </div>
+    </div>
+</section>  
+<script>
+    function animateMail(speed: number){
+        const windowWidth = window.innerWidth;
+        const container = document.querySelector('.Contact-animate') as HTMLDivElement;
+        const containerChildren = document.querySelectorAll('.isArchor') as NodeListOf<HTMLAnchorElement>;
+        const containerWidth = containerChildren[0].clientWidth * containerChildren.length - 1;
+        const diferenceContainerAndWindow = containerWidth - windowWidth;
+        let pos = 1;
+
+        function animation(){
+            container.style.transform = `translateX(-${pos += speed}px)`;
+            if(pos >= diferenceContainerAndWindow + 20) pos = 1;
+            requestAnimationFrame(animation);
+        }
+        requestAnimationFrame(animation)
+    }
+
+    animateMail(3);
+    
+</script>
 <style lang="scss">
     .Contact{
         background-color: var(--color-white);
-        padding: var(--padding);
+        &-content{
+            padding: var(--padding);
+        }
+        &-title{
+            font-size: clamp(1em, 5vw, 5em);
+        }
+        &-mail{
+            padding: 2.1875rem 0 0 0;
+            overflow: hidden;
+        }
+        &-animate{
+            display: flex;
+            align-items: baseline;
+            flex-wrap: nowrap;
+        }
         &-email{
-            margin: var(--padding) 0 0 0;
             line-height: 100%;
-            font-size: 5vw;
+            font-size: clamp(5em, 12vw,12em);
+            white-space: nowrap;
             margin: var(--padding) 0 0 0;
-            @media screen and (max-width: 400px) {
-                font-size: 8vw;
-                padding: 20px 0;
+            text-transform: uppercase;
+            &:hover{
+                color: var(--color-secundary);
             }
         }
     }

@@ -1,12 +1,33 @@
-<h3 class="Title">
-    <slot />
-</h3>
+<div class="Title">
+    <h3 class="Title-title">
+        <slot />
+    </h3>
+    <h3 class="Title-title">
+        <slot />
+    </h3>
+    <h3 class="Title-title">
+        <slot />
+    </h3>
+</div>
 <style lang="scss">
     .Title{
-        font-size: clamp(3.5em, 10vw, 10vw);
-        color: var(--color-black);
-        text-align: center;
-        line-height: 100%;
-        background-color: transparent;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        &-title{
+            font-size: clamp(3em, 12vw, 12vw);
+            text-transform: uppercase;
+            color: var(--color-black);
+            line-height: 100%;
+            align-self: end;
+            &:nth-child(2){
+                align-self: start;
+            }
+            &:nth-child(3){
+                align-self: end;
+            }
+        }
     }
 </style>

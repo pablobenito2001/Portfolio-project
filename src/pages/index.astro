@@ -9,14 +9,15 @@ import Footer from '../module/Footer/Footer.astro';
 ---
 <Layout title="Portfolio | Pablo Benito">
 	<Nav />
-	<Header />
-	<main>
+	<main class="Main">
+		<Header />
 		<About />
 		<Projects />
 		<Contact />
 	</main>
-	<Footer />
 </Layout>
 <style>
-
+	.Main{
+		padding: var(--nav-size) 0 0 0;
+	}
 </style>

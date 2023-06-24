@@ -1,14 +1,21 @@
 @font-face {
-    font-family: 'Ailerons';
-    src: local("Ailerons");
+    font-family: 'Basement Grotesque';
+    src: url('/fonts/Basement.woff2') format('woff2');
     font-display: swap;    
+}
+@font-face{
+    font-family: 'Space Mono';
+    src: url('/fonts/SpaceMono-Regular.ttf');
+    font-weight: regular;
+    font-display: swap;
 }
 :root {
     /* Tipografía */
-    --principal: 'Ailerons', sans-serif;
+    --principal: 'Basement Grotesque', sans-serif;
     --secundary: 'Space Mono', monospace;
     /* spaces */
-    --padding: 2.1875rem;
+    --padding: 3%;
+    --nav-size: 3.5rem;
 }
 
 @media screen and (max-width: 53.125rem) {
@@ -24,13 +31,13 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     vertical-align: baseline;
-    transition: background-color .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: background-color .5s cubic-bezier(0.075, 0.82, 0.165, 1), color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 body {
     --color-black: #121212;
     --color-white: #F5F5F5;
-    --color-grey: #8F8F8F;
+    --color-grey: #7e7e7e;
     --color-secundary: #F05454;
     min-height: 100vh;
     font-size: 100%;

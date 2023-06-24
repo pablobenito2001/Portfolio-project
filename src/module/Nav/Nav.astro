@@ -25,6 +25,9 @@
         padding: .625rem .9375rem;
         background-color: var(--color-white);
         width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 3;
         &-logo{
             fill: var(--color-black);
         }
@@ -37,7 +40,21 @@
             }
         }
         &-link{
-            font-size: 1.7em;
+            font-size: 1em;
+            text-transform: uppercase;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--color-black);
+                transition: width 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            &:hover::before{
+                width: 100%;
+            }
         }
     }
 </style>
