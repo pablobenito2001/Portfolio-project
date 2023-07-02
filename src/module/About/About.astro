@@ -1,6 +1,7 @@
 ---
 import SocialGroup from "./SocialGroup.astro";
-import saturn from '../../assets/images/saturn.webp';
+import saturn from '../../assets/images/bsas.webp';
+import bsas_mobile from '../../assets/images/bsas_mobile.webp';
 ---
 <section class="About" id="about">   
     <div class="About-content About-spacing">
@@ -11,10 +12,13 @@ import saturn from '../../assets/images/saturn.webp';
         <SocialGroup />
     </div>
     <div class="About-content">
-        <img 
-        src={saturn} 
-        alt="saturn photo"
-        class="About-image">
+        <picture>
+            <source media="(max-width: 450px)" srcset={bsas_mobile}>
+            <img 
+            src={saturn} 
+            alt="saturn photo"
+            class="About-image">
+        </picture>
     </div>
 </section>
 <style lang="scss">
@@ -25,24 +29,20 @@ import saturn from '../../assets/images/saturn.webp';
         gap: .9375rem;
         background-color: var(--color-white);
         padding: var(--padding);
+        max-width: var(--max-width);
+        margin: auto;
         &-title{
-            font-size: 3vw;
+            font-size: clamp(1.3em, 3vw, 3em);
             margin: 0 0 .3125rem 0;
             text-transform: uppercase;
-            @media screen and (max-width: 850px) {
-                font-size: 6vw;
-            }
         }
         &-bio{
             font-family: var(--secundary);
             color: var(--color-grey);
-            font-size: clamp(1em, 2vw, 2vw);
+            font-size: clamp(1em, 2vw, 2em);
         }
         &-text{
             line-height: 100%;
-        }
-        &-image{
-            max-height: 43.75rem;
         }
         &-spacing{
             display: flex;

@@ -1,4 +1,6 @@
-export const projects = [
+import type { ProjectType } from "../entities/Projects"
+
+export const projects: ProjectType[] = [
     {
         "id": 0,
         "name": "motostore",
@@ -19,7 +21,8 @@ export const projects = [
                 "media": 480,
                 "source": "https://res.cloudinary.com/dxagsphno/image/upload/v1687495299/Portfolio--projects/motostore/motostore_tablet-1_om0qwd.webp"
             }   
-        ]
+        ],
+        "url": ""
     },
     {
         "id": 1,
@@ -41,7 +44,8 @@ export const projects = [
                 "media": 480,
                 "source": "https://res.cloudinary.com/dxagsphno/image/upload/v1687495767/Portfolio--projects/pokefind/pokefind_phone_bg3xqm.png"
             }
-        ]
+        ],
+        "url": "https://pokefind-ruddy.vercel.app/"
     },
     {
         "id": 2,
@@ -64,6 +68,7 @@ export const projects = [
                 "media": 480,
                 "source": "https://res.cloudinary.com/dxagsphno/image/upload/v1687404338/Portfolio--projects/terr/smartmockups_lj6cea7h_dmfkam.webp"
             }   
-        ]
+        ],
+        "url": "https://github.com/pablobenito2001/TerritoryDS-project"
     }
 ]

@@ -6,7 +6,7 @@ import CardProject from '../../components/Project/CardProject.astro';
 ---
 <ProjectsCardLayout>
     {projects.map((project: ProjectType) => (
-        <CardProject name={project.name} description={project.type} pic={project.source_image} media={project.media} tecnologies={project.tecnologies}/>
+        <CardProject name={project.name} description={project.type} pic={project.source_image} media={project.media} tecnologies={project.tecnologies} url={project.url}/>
     ))}
 </ProjectsCardLoyaut>
 <style lang='scss'>

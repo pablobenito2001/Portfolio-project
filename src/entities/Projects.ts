@@ -5,4 +5,5 @@ export type ProjectType = {
     type: string;
     id: number;
     media: { media: number, source: string }[];
+    url: string;
 }

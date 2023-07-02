@@ -5,19 +5,22 @@ interface Props{
     pic: string;
     media: { source: string, media: number }[];
     tecnologies: string[];
+    url: string;
 }
 
-const { name, description, pic, media, tecnologies } = Astro.props;
+const { name, description, pic, media, tecnologies, url } = Astro.props;
 ---
 <div class="ProjectCard">
-    <picture>
-        {media.map((elem: { source: string, media: number }) => (<source srcset={elem.source} media={`screen and (min-width: ${elem.media}px)`}>))}
-        <img src={pic} alt={`${name}' mockup'`} class="ProjectCard-image">
-    </picture>
-    <div>
-        <h3 class="ProjectCard-text ProjectCard-name">{name}-{description}</h3>
-        <span class="ProjectCard-text ProjectCard-tecnologies"><span class="ProjectCard-star">✦</span> {tecnologies.join('|')}</span>
-    </div>
+    <a href={url} target="_blank" rel="noopener noreferrer" title={`go to ${name} site`}>
+        <picture>
+            {media.map((elem: { source: string, media: number }) => (<source srcset={elem.source} media={`screen and (min-width: ${elem.media}px)`}>))}
+            <img src={pic} alt={`${name}' mockup'`} class="ProjectCard-image">
+        </picture>
+        <div>
+            <h3 class="ProjectCard-text ProjectCard-name">{name}-{description}</h3>
+            <span class="ProjectCard-text ProjectCard-tecnologies"><span class="ProjectCard-star">✦</span> {tecnologies.join('|')}</span>
+        </div>
+    </a>
 </div>
 <style lang='scss'>
     .ProjectCard{
@@ -27,8 +30,13 @@ const { name, description, pic, media, tecnologies } = Astro.props;
         }
         &-image{
             width: 100%;
-            border-radius: 6%;
+            border-radius: 5%;
             margin: 0 0 var(--padding) 0;
+            filter: grayscale(100%);
+            transition: filter .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            &:hover{
+                filter: unset;
+            }
         }
         &-name{
             font-size: clamp(2em, 3vw ,3vw);
@@ -37,7 +45,7 @@ const { name, description, pic, media, tecnologies } = Astro.props;
             text-transform: uppercase;
         }
         &-tecnologies{
-            font-size: clamp(.7em, 1.5vw,1.5vw);
+            font-size: clamp(.7em, 1.5vw, 1.5vw);
             font-family: var(--secundary);
         }
         &-text{

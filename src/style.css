@@ -16,6 +16,7 @@
     /* spaces */
     --padding: 3%;
     --nav-size: 3.5rem;
+    --max-width: 1920px;
 }
 
 @media screen and (max-width: 53.125rem) {
@@ -50,6 +51,7 @@ body {
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-white);
 }
 .dark-mode{
     --color-black: #F5F5F5;
