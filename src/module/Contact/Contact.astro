@@ -1,10 +1,16 @@
 ---
 import Title from '../../components/Title.astro';
 import mail from '../../assets/images/benitopab@gmail.com.png';
+import SocialLink from '../../components/Contact/SocialLink.astro';
+import type { Social } from '../../entities/Social';
+import { social } from '../../consts/Social';
 ---
 <section class="Contact" id="contact"> 
     <div class="Contact-content">
         <Title>C<span class="isRed">✦</span>ntact</Title>
+        <div class="Contact-contact">
+            { social.map((elem: Social) => ( <SocialLink title={elem.title} link={elem.link}/> )) }
+        </div>
     </div>
     <div class="Contact-mail">
         <div class="Contact-animate">
@@ -41,12 +47,13 @@ import mail from '../../assets/images/benitopab@gmail.com.png';
         background-color: var(--color-white);
         &-content{
             padding: var(--padding);
+            max-width: var(--max-width);
+            margin: auto;
         }
         &-title{
             font-size: clamp(1em, 5vw, 5em);
         }
         &-mail{
-            padding: 2.1875rem 0 0 0;
             overflow: hidden;
         }
         &-animate{
@@ -58,7 +65,7 @@ import mail from '../../assets/images/benitopab@gmail.com.png';
             line-height: 100%;
             font-size: clamp(5em, 12vw,12em);
             white-space: nowrap;
-            margin: var(--padding) 0 0 0;
+            // margin: var(--padding) 0 0 0;
             text-transform: uppercase;
             &:hover{
                 color: var(--color-secundary);

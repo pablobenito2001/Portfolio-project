@@ -1,0 +1,63 @@
+---
+interface Props{
+    title: string;
+    link: string;
+}
+const { title, link } = Astro.props;
+---
+<div class="SocialLink">
+    <a href={link} class="SocialLink-container" rel="noopener noreferrer" title={title} target="_blank">
+        <h3 class="SocialLink-title">{title}</h3>
+        <div class="SocialLink-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="SocialLink-svg" height="90" viewBox="0 -960 960 960" width="90"><path d="m202-160-42-42 498-498H364v-60h396v396h-60v-294L202-160Z"/></svg>
+        </div>
+    </a>
+</div>
+<style lang="scss">
+    .SocialLink{
+        overflow: hidden;
+        padding: .9375rem .625rem;
+        &:hover .SocialLink-title::before{
+            width: 100%;
+            background-color: var(--color-secundary);
+        }
+        &:hover .SocialLink-title{
+            color: var(--color-secundary);
+        }
+        &:hover .SocialLink-svg{
+            fill: var(--color-secundary);
+        }
+        &-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .625rem;
+            width: 100%;
+        }
+        &-title{
+            font-size: clamp(2em, 7vw,7em);
+            line-height: 100%;
+            text-transform: uppercase;
+            color: var(--color-black);
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                background-color: var(--color-black);
+                bottom: 0;
+                left: 0;
+                height: .25rem;
+                width: 0;
+                transition: width .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+        &-svg{
+            fill: var(--color-black);
+            transition: fill .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            @media screen and (max-width: 850px) {
+                width: 3.125rem;
+                height: 3.125rem;
+            }
+        }
+    }
+</style>
